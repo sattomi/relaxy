@@ -9,13 +9,13 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
   database: db_development
   username: user_development
   password: <%= ENV['PASS_DEVELOPMENT'] %>
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,9 +25,12 @@ test:
   database: db_test
   username: user_test
   password: <%= ENV['PASS_TEST'] %>
+  socket: /tmp/mysql.sock
 
 production:
   <<: *default
-  database: db_production
-  username: user_test
+  database: heroku_b07bd4457e34840
+  host: us-cdbr-iron-east-02.cleardb.net
+  port: 3306
+  username: bdcb0e9f23b1a9
   password: <%= ENV['PASS_PRODUCTION'] %>
