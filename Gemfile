@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'omniauth'
+
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -49,5 +53,7 @@ group :development, :test do
 
   # for test
   gem 'rspec', '3.3.0'
+
+  gem "dotenv-rails"
 end
 
