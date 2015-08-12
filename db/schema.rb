@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150811015251) do
     t.datetime "updated_at",                                      null: false
     t.string   "uid",                    limit: 255
     t.string   "provider",               limit: 255
-    t.string   "birthday",               limit: 255
+    t.date     "birthday"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

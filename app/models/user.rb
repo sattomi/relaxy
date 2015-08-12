@@ -5,21 +5,26 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   def self.find_for_oauth(auth)
-    user = User.where(uid: auth.uid, provider: auth.provider).first
 
-    unless user
+    unless user = User.where(uid: auth.uid, provider: auth.provider).first
       user = User.create(
         uid:      auth.uid,
         provider: auth.provider,
-        email:    auth.email,
-        birthday: auth.user_birthday, # 申請しないと取れないらしいので保留?ss
+        email:    User.get_email(auth),
+        birthday: auth.info.user_birthday, # 申請しないと取れないらしいので保留?
         password: Devise.friendly_token[0, 20]
       )
     end
-
+    
     user
   end
 
   private
+
+    def self.get_email(auth)
+      email = auth.info.email
+      email = "#{auth.provider}-#{auth.uid}@example.com" if email.blank?
+      email
+    end
 
 end
