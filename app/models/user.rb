@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     user
   end
 
-  private
+  protected
 
     def self.get_email(auth)
       email = auth.info.email

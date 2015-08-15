@@ -1,0 +1,3 @@
+class Therapist < User
+
+end
