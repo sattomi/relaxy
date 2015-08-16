@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815081315) do
+ActiveRecord::Schema.define(version: 20150816045312) do
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "name",                    limit: 255
+    t.integer  "price_30_min",            limit: 4
+    t.integer  "price_60_min",            limit: 4
+    t.integer  "price_120_min",           limit: 4
+    t.integer  "price_additional_10_min", limit: 4
+    t.string   "description",             limit: 255
+    t.integer  "therapist_id",            limit: 4
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
