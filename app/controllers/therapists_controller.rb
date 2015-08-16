@@ -1,5 +1,7 @@
-class TherapistsController < ApplicationController
+class TherapistsController < UsersController
   before_action :set_therapist, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:show, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   # GET /therapists
   # GET /therapists.json
