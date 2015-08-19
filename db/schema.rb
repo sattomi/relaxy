@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816045312) do
+ActiveRecord::Schema.define(version: 20150819144734) do
 
   create_table "plans", force: :cascade do |t|
     t.string   "name",                    limit: 255
@@ -26,18 +26,18 @@ ActiveRecord::Schema.define(version: 20150816045312) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "email",                  limit: 255,      default: "", null: false
+    t.string   "encrypted_password",     limit: 255,      default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,        default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
     t.string   "uid",                    limit: 255
     t.string   "provider",               limit: 255
     t.date     "birthday"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20150816045312) do
     t.text     "working_hours",          limit: 65535
     t.string   "address",                limit: 255
     t.string   "type",                   limit: 255
+    t.binary   "icon",                   limit: 16777215
+    t.string   "icon_content_type",      limit: 255
+    t.string   "email_for_notification", limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
