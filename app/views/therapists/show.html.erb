@@ -1,4 +1,22 @@
+<% provide(:title, @therapist.id) %>
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Edit', edit_therapist_path(@therapist) %> |
 <%= link_to 'Back', therapists_path %>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>s
+        <%= @therapist.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+      <h3>
+      <%= @therapist.carrer %>
+      <%= @therapist.description %>
+      <%= @therapist.working_hours %>
+      </h3>
+  </div>
+</div>

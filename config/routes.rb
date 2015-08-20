@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :therapists do
     member do
       post 'register'
+      get 'show'
     end
   end
 
@@ -21,11 +22,11 @@ Rails.application.routes.draw do
   end
 
 
-  get 'home/index'
+  #get 'home/index'
 
-  get 'home/show'
+  #get 'home/show'
 
-  root to: 'home#index'
+  root to: 'therapists#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

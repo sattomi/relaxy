@@ -1,7 +1,5 @@
-<h1>Editing Patient</h1>
-
-<%= render 'form' %>
-
-<%= @user.email %> |
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', patients_path %>
+<h1>Begin Registration</h1>
+<h3>
+	<%= link_to "ユーザーとして登録", register_patient_path %> |
+  <%= link_to "施術者として登録", register_therapist_path %>
+</h3>
