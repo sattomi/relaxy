@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   serialize :carrer
   serialize :working_hours
 
+  def registered?
+    self.registered
+  end
+
   def self.find_for_oauth(auth)
 
     unless user = User.where(uid: auth.uid, provider: auth.provider).first

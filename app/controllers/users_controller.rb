@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+	
+	def begin_registration
+	end
+
   protected
     def correct_user
       @user = User.find(params[:id])

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819144734) do
+ActiveRecord::Schema.define(version: 20150820112124) do
 
   create_table "plans", force: :cascade do |t|
     t.string   "name",                    limit: 255
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150819144734) do
     t.binary   "icon",                   limit: 16777215
     t.string   "icon_content_type",      limit: 255
     t.string   "email_for_notification", limit: 255
+    t.boolean  "registered",             limit: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
