@@ -1,7 +1,7 @@
 class TherapistsController < UsersController
-  before_action :set_therapist, only: [:show, :edit, :update]
-  before_action :authenticate_user!, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :set_therapist, only: [:show, :edit, :update, :register]
+  before_action :authenticate_user!, only: [:show, :edit, :update, :register]
+  before_action :correct_user, only: [:edit, :update, :register]
 
   # GET /therapists
   # GET /therapists.json
@@ -16,6 +16,9 @@ class TherapistsController < UsersController
 
   # GET /therapists/1/edit
   def edit
+  end
+
+  def register
   end
 
   # PATCH/PUT /therapists/1

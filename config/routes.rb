@@ -10,14 +10,14 @@ Rails.application.routes.draw do
 
   resources :therapists do
     member do
-      post 'register'
+      get 'register'
       get 'show'
     end
   end
 
   resources :patients do
     member do
-      post 'register'
+      get 'register'
     end
   end
 

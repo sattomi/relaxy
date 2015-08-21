@@ -12,8 +12,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
+      sign_in @user, event: :authentication
+      
       if @user.registered?
-        sign_in_and_redirect @user, event: :authentication
+        redirect_to root_path
       else
         redirect_to "/users/#{@user.id}/begin_registration"
      end

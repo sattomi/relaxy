@@ -1,10 +1,13 @@
 class PatientsController < UsersController
-  before_action :set_patient, only: [:edit, :update]
-  before_action :authenticate_user!, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :set_patient, only: [:edit, :update, :register]
+  before_action :authenticate_user!, only: [:edit, :update, :register]
+  before_action :correct_user, only: [:edit, :update, :register]
 
   # GET /patients/1/edit
   def edit
+  end
+
+  def register
   end
 
   # PATCH/PUT /patients/1
