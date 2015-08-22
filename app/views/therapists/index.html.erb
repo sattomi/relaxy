@@ -17,7 +17,10 @@
     <tbody>
       <% @therapists.each do |therapist| %>
         <tr>
-          <td> <%= therapist.email %><%= link_to 'Show', therapist  %></td>
+          <h4>施術者</h4>
+          <td> <%= therapist.email %>
+               </br>
+               <%= link_to 'Show', therapist  %></td>
 
         </tr>
       <% end %>
