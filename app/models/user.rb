@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
         email:    User.get_email(auth),
         birthday: auth.info.user_birthday, # 申請しないと取れないらしいので保留?
         password: Devise.friendly_token[0, 20]
+        type: Therapist
       )
     end
     

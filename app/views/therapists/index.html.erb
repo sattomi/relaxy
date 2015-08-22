@@ -1,23 +1,40 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relaxy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/header' %>
 
-<h1>Listing Therapists</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @therapists.each do |therapist| %>
+  <table>
+    <thead>
       <tr>
-        <td> <%= therapist.email %><%= link_to 'Show', therapist %></td>
-
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @therapists.each do |therapist| %>
+        <tr>
+          <td> <%= therapist.email %><%= link_to 'Show', therapist  %></td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</head>
+<body>
+  <%= render 'layouts/footer' %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<%= yield %>
+
+</body>
+</html>
+
+
+
+
 

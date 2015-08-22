@@ -1,0 +1,23 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Relaxy", 'therapists/index', id: "logo" %>
+
+        <nav>
+          <!-- user_signed_in? はユーザがログインしているか調べるdeviseのHelperメソッド -->
+          <% if user_signed_in? %> 
+            <!-- current_user は現在ログインしているUserオブジェクトを返すdeviseのHelperメソッド -->
+            <!-- *_path はUserモデルを作成したときに、
+              deviseにより自動で作成されてますので、rake routesで確認できます -->
+            Logged in as <strong><%= current_user.email %></strong>.
+
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "facebook認証", user_omniauth_authorize_path(:facebook) %> |
+            <%= link_to "サインイン", new_user_registration_path %> |
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </nav>
+    </div>
+  </div>
+</header>
