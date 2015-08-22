@@ -13,8 +13,7 @@
     <% @therapists.each do |therapist| %>
       <tr>
         <td> <%= therapist.email %><%= link_to 'Show', therapist %></td>
-        <td><%= link_to 'Edit', edit_therapist_path(therapist) %></td>
-        <td><%= link_to 'Destroy', therapist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +21,3 @@
 
 <br>
 
-<%= link_to 'New Therapist', new_therapist_path %>

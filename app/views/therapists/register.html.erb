@@ -1,0 +1,18 @@
+<% provide(:title, @therapist.id) %>
+<h1>Make profile and complete registration</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@therapist) do |f| %>
+
+
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "Back", :back %>
