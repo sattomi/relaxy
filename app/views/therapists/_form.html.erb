@@ -1,4 +1,26 @@
 <%= form_for(@therapist) do |f| %>
+      
+      <%= f.label :icon %>
+      <%= f.file_field :icon, :class => 'file_field' %>
+      
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email_for_notification %>
+      <%= f.text_field :email_for_notification %>
+
+      <%= f.label :carrer %>
+      <%= f.text_field :carrer %>
+
+      <%= f.label :introduction %>
+      <%= f.text_field :introduction %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+
   <% if @therapist.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@therapist.errors.count, "error") %> prohibited this therapist from being saved:</h2>
@@ -8,6 +30,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
     </div>
   <% end %>
 

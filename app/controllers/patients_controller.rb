@@ -16,7 +16,7 @@ class PatientsController < UsersController
     respond_to do |format|
       if @patient.update(patient_params)
         format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
-        format.json { render :show, status: :ok, location: @patient }
+        format.json { render :edit, status: :ok, location: @patient }
       else
         format.html { render :edit }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
